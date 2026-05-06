@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIRIT — AI Fashion Assistant</title>
+  <meta name="description" content="HIRIT — Korean AI fashion assistant. Your closet talks to you every morning.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --lime: #C7F542;
+      --lime-deep: #A8DC1F;
+      --ink: #15161A;
+      --ink-secondary: #33353B;
+      --cream: #F0E8D6;
+      --cream-soft: #FAF6EC;
+      --bg: #FFFFFF;
+      --surface: #F5F5F5;
+      --text-muted: #94969D;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 32px 28px;
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+    main {
+      flex: 1;
+      padding: 0 28px 96px;
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero {
+      padding: 80px 0 96px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      background: var(--cream);
+      color: #4A4230;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: clamp(40px, 8vw, 80px);
+      font-weight: 900;
+      letter-spacing: -2.4px;
+      line-height: 1.04;
+      margin-bottom: 28px;
+    }
+    h1 .accent {
+      background: var(--lime);
+      padding: 0 12px;
+      border-radius: 6px;
+      color: var(--ink);
+    }
+    .lead {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+      max-width: 580px;
+      margin-bottom: 48px;
+      letter-spacing: -0.3px;
+    }
+    .lead-en {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 580px;
+      letter-spacing: -0.1px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 96px;
+    }
+    .feature {
+      padding: 24px;
+      background: var(--surface);
+      border-radius: 12px;
+    }
+    .feature-num {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--ink);
+      color: var(--lime);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .feature-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+    }
+    .feature-body {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ink-secondary);
+    }
+    section.policy {
+      padding: 40px;
+      background: var(--cream-soft);
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    section.policy h2 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 8px;
+    }
+    section.policy .policy-meta {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.4px;
+      margin-bottom: 20px;
+    }
+    section.policy p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-secondary);
+      margin-bottom: 14px;
+    }
+    section.policy p strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+    footer {
+      padding: 32px 28px;
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid #E5E5E5;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 48px 0 72px; }
+      section.policy { padding: 28px 24px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">hirit<span class="logo-dot"></span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">COMING SOON · 2026</span>
+      <h1>옷 잘 입고 싶다면<br><span class="accent">옷장</span>에게 물어봐</h1>
+      <p class="lead">
+        HIRIT은 한국 헤비 패션 유저를 위한 AI 옷장 비서예요.<br>
+        본인 옷장 + AI 코디 추천 + 매일 코디 — 매일 아침 옷장이 말 걸어옵니다.
+      </p>
+      <p class="lead-en">
+        HIRIT is a Korean AI fashion assistant. Your closet, your style, your morning conversation.
+      </p>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <span class="feature-num">01</span>
+        <div class="feature-title">옷장 자동 등록</div>
+        <p class="feature-body">영상 한 번에 옷장 채워주는 AI</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">02</span>
+        <div class="feature-title">AI 코디 추천</div>
+        <p class="feature-body">본인 옷장 + 일정 + 날씨 매칭</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">03</span>
+        <div class="feature-title">매일 코디 알림</div>
+        <p class="feature-body">매일 아침, 옷장이 말 걸어와요</p>
+      </div>
+    </section>
+
+    <section class="policy" id="privacy">
+      <h2>개인정보 처리방침</h2>
+      <div class="policy-meta">DRAFT · 2026-05 · 정식 출시 시점에 갱신</div>
+      <p>
+        <strong>1. 수집 항목</strong> — HIRIT은 서비스 제공에 필요한 최소한의 개인정보만 수집합니다.
+        가입 정보 (이메일 / 닉네임), 옷장 데이터, 추천 이력, 결제 정보가 포함됩니다.
+      </p>
+      <p>
+        <strong>2. 이용 목적</strong> — 수집된 정보는 AI 옷장 추천, 매일 코디 알림, 결제 처리,
+        서비스 개선을 위해서만 사용됩니다.
+      </p>
+      <p>
+        <strong>3. 보관 기간</strong> — 회원 탈퇴 시 모든 개인정보는 즉시 파기됩니다.
+        법령에 따라 보관이 필요한 결제 기록은 관련 법률에서 정한 기간 동안 보관됩니다.
+      </p>
+      <p>
+        <strong>4. 제3자 제공</strong> — 사용자의 명시적 동의 없이 제3자에게 제공하지 않습니다.
+        AI 추천 모델 학습 시 익명화된 통계 데이터만 활용됩니다.
+      </p>
+      <p>
+        <strong>5. 사용자 권리</strong> — 사용자는 언제든 개인정보 열람, 정정, 삭제, 처리 정지를
+        요청할 수 있습니다.
+      </p>
+      <p>
+        본 정책은 정식 출시 시점에 한국 개인정보보호법 및 GDPR을 준수하여 최종 갱신됩니다.
+      </p>
+    </section>
+
+    <section class="policy" id="terms">
+      <h2>이용약관</h2>
+      <div class="policy-meta">DRAFT · 2026-05 · 정식 출시 시점에 갱신</div>
+      <p>
+        HIRIT 서비스 이용약관은 정식 출시 시점에 게시됩니다. 본 페이지는 개발 단계의
+        placeholder이며, 실제 약관은 출시 시점에 본 URL에 게시될 예정입니다.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 HIRIT</div>
+    <div>
+      <a href="#privacy" style="color: inherit; margin-right: 16px; text-decoration: none;">Privacy</a>
+      <a href="#terms" style="color: inherit; text-decoration: none;">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>
